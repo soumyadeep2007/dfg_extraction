@@ -1,17 +1,22 @@
 #include <stdio.h>
 
-void f1(int);
-void f2(int);
+void funca(int);
+void funcb(int);
 
 int main() {
-	f1(5);
+	int a = 6;
+	funca(5);
+	int b = 7;
+	funcb(2);
 	return 0;
 }
 
-void f1(int p1) {
-	f2(p1);
+void funca(int p1) {
+	int a = 6;
+	funcb(p1);
+	int b = 7;
 }
 
-void f2(int p1) {
-	printf("%d", p1);
+void funcb(int p1) {
+	int d = 10;
 }
