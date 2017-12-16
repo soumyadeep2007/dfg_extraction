@@ -1,0 +1,17 @@
+digraph "Call graph" {
+	label="Call graph";
+
+	Node0x2cd4680 [shape=record,label="{external node}"];
+	Node0x2cd4680 -> Node0x2cd4720;
+	Node0x2cd4680 -> Node0x2cd9d20;
+	Node0x2cd4680 -> Node0x2cd9cb0;
+	Node0x2cd4680 -> Node0x2cf9870;
+	Node0x2cd4720 [shape=record,label="{main}"];
+	Node0x2cd4720 -> Node0x2cd9d20;
+	Node0x2cd9d20 [shape=record,label="{f1}"];
+	Node0x2cd9d20 -> Node0x2cd9cb0;
+	Node0x2cd9cb0 [shape=record,label="{f2}"];
+	Node0x2cd9cb0 -> Node0x2cf9870;
+	Node0x2cf9870 [shape=record,label="{printf}"];
+	Node0x2cf9870 -> Node0x2cd46b0;
+}
