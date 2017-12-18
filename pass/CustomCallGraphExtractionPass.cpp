@@ -24,11 +24,10 @@ namespace {
         		modifyBasicBlocks(F);
         	}
 
-            errs() << "After bb mod:\n";
-            M.dump();
-
         	Function * mainFunction = M.getFunction("main");
         	constructCallChain(*mainFunction, chain);
+
+        	M.dump();
 
         	errs() << "Chain:\n";
         	string output = "";
@@ -85,7 +84,7 @@ namespace {
             	else {
             		BasicBlock::iterator I = BB.begin();
             		CallInst * callInst = dyn_cast<CallInst>(I);
-            		BB.setName(basicBlockName.substr(basicBlockName.size() - 2)); //remove suffix
+            		BB.setName(basicBlockName.substr(0, basicBlockName.size() - 1)); //remove suffix
             		constructCallChain(*(callInst->getCalledFunction()), chain);
             	}
         	}

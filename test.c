@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 void funca(int);
 void funcb(int);
 
