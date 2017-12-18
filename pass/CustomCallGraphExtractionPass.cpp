@@ -30,9 +30,13 @@ namespace {
         	Function * mainFunction = M.getFunction("main");
         	constructCallChain(*mainFunction, chain);
 
+        	errs() << "Chain:\n";
+        	string output = "";
             for (const auto& functionName : chain) {
-                errs() << functionName << "->";
+                output += functionName + "->";
             }
+            output = output.substr(0, output.size() - 2);
+        	errs() << output << "\n";
 
             return true;
         }
